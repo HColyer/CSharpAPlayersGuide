@@ -1,0 +1,14 @@
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\bin\Debug\net10.0\SimulasTest.exe
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\bin\Debug\net10.0\SimulasTest.deps.json
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\bin\Debug\net10.0\SimulasTest.runtimeconfig.json
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\bin\Debug\net10.0\SimulasTest.dll
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\bin\Debug\net10.0\SimulasTest.pdb
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.AssemblyInfoInputs.cache
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.AssemblyInfo.cs
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.csproj.CoreCompileInputs.cache
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.dll
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\refint\SimulasTest.dll
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.pdb
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\SimulasTest.genruntimeconfig.cache
+C:\Users\colye\OneDrive\Desktop\C# Players guide\SimulasTest\SimulasTest\obj\Debug\net10.0\ref\SimulasTest.dll
