@@ -25,28 +25,63 @@ namespace VinFletchersArrows
         //   to display the arrow’s cost
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the arrow maker");
-            Console.WriteLine("What would you like your arrow head made of?");
-            Console.WriteLine("1: Steel");
-            Console.WriteLine("2: Wood");
-            Console.WriteLine("3: Obsidian");
+            Console.WriteLine("Welcome to the Vins Arrow Maker");
+            Console.WriteLine("Choose from the follow Arrows?");
+            Console.WriteLine("1: Elite Arrow");
+            Console.WriteLine("2: Marksman Arrow");
+            Console.WriteLine("3: Beginner Arrow");
+            Console.WriteLine("4: Custom made arrow");
 
-            ArrowHead head = (ArrowHead)Convert.ToInt32(Console.ReadLine()) - 1;
+            int usersChoice = Convert.ToInt32(Console.ReadLine());
+                
+            while (usersChoice <= 0 || usersChoice >= 4)
+            {
+                usersChoice = Convert.ToInt32(Console.ReadLine());
+            }
+                
+            Arrow? customersArrow = null!;
+            switch (usersChoice)
+            {
+                case 1:
+                    customersArrow = Arrow.CreateEliteArrow();
+                    break;
+                case 2:
+                    customersArrow = Arrow.CreateMarksmanArrow();
+                    break;
+                case 3:
+                    customersArrow = Arrow.CreateBeginnerArrow();
+                    break;
+                case 4:
+                    PrintArrowHeadOptions();
+                    ArrowHead head = (ArrowHead)Convert.ToInt32(Console.ReadLine()) - 1;
+                    PrintArrowFletchingOptions();
+                    ArrowFletching fletching = (ArrowFletching)Convert.ToInt32(Console.ReadLine()) - 1;
+                    Console.WriteLine("How long would you like the arrow shaft to be 60-100(CM)");
+                    int arrowLength = Convert.ToInt32(Console.ReadLine());
+                    customersArrow = new Arrow(head, fletching, arrowLength);
+                    break;
+            }
 
-            Console.WriteLine("What would you like your arrow fletching made of?");
-            Console.WriteLine("1: Plastic");
-            Console.WriteLine("2: Turkey");
-            Console.WriteLine("3: Goose");
-
-            ArrowFletching fletching = (ArrowFletching)Convert.ToInt32(Console.ReadLine()) - 1;
-
-            Console.WriteLine("How long would you like the arrow shaft to be 60-100(CM)");
-            int length = Convert.ToInt32(Console.ReadLine());
-
-            Arrow arrow = new Arrow(head, fletching, length);
-            Console.WriteLine($"You have chosen an arrow with a {head} head and a {fletching} fletching, with a {length}CM shaft.");
-            Console.WriteLine($"Your total cost will be {arrow.GetCost():0.00} gold");
+            Console.WriteLine($"You have chosen an arrow with a {customersArrow.Head} head and a {customersArrow.Fletching} fletching, with a {customersArrow.ShaftLength}CM shaft.");
+            Console.WriteLine($"Your total cost will be {customersArrow.GetCost():0.00} gold");
             Console.ReadKey();
+
+            void PrintArrowHeadOptions()
+            {
+                Console.WriteLine("What would you like your arrow head made of?");
+                Console.WriteLine("1: Steel");
+                Console.WriteLine("2: Wood");
+                Console.WriteLine("3: Obsidian");
+            }
+
+            void PrintArrowFletchingOptions()
+            {
+                Console.WriteLine("What would you like your arrow fletching made of?");
+                Console.WriteLine("1: Plastic");
+                Console.WriteLine("2: Turkey");
+                Console.WriteLine("3: Goose");
+            }
+
         }
     }
 
@@ -55,16 +90,21 @@ namespace VinFletchersArrows
 
     class Arrow
     {
-        public ArrowHead Head;
-        public ArrowFletching Fletching;
-        public int ShaftLength;
+        public ArrowHead Head { get; private set; }
+        public ArrowFletching Fletching { get; private set; }
+        public int ShaftLength { get; private set; }
 
         public Arrow(ArrowHead head, ArrowFletching fletching, int shaftLength)
         {
-            this.Head = head;
-            this.Fletching = fletching;
-            this.ShaftLength = shaftLength;
+            Head = head;
+            Fletching = fletching;
+            ShaftLength = shaftLength;
         }
+
+        public static Arrow CreateEliteArrow() => new Arrow(ArrowHead.Steel, ArrowFletching.Plastic, 95);
+        public static Arrow CreateBeginnerArrow() => new Arrow(ArrowHead.Wood, ArrowFletching.Goose, 75);
+        public static Arrow CreateMarksmanArrow() => new Arrow(ArrowHead.Steel, ArrowFletching.Goose, 65);
+
 
         public double GetCost()
         {
@@ -85,7 +125,7 @@ namespace VinFletchersArrows
                 _ => 0,
             };
 
-            return (double)headPrice + fletchPrice + shaftPrice; 
+            return (double)headPrice + fletchPrice + shaftPrice;
         }
     }
 }
