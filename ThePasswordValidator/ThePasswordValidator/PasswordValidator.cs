@@ -27,7 +27,7 @@ namespace ThePasswordValidator
             {
                 isCorrectLength = true;
             }
-            // loops through every character 
+            
             foreach (char c in _password)
             {
                 if (char.IsUpper(c)) hasUpperCaseChar = true;
@@ -46,7 +46,6 @@ namespace ThePasswordValidator
                 message = "Password needs to be more than 6 characters and less than 13";
                 return false;
             }
-
             if (!hasDigitChar || !hasUpperCaseChar || !hasLowerCaseChar)
             {
                 message = "Password must contain at least one uppercase letter, one lowercase and one number";
