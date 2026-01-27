@@ -21,7 +21,7 @@ namespace TicTacToe
                 Console.WriteLine("Please enter a valid number:");
             }
 
-            if (playersMove <= 0 || playersMove > 9)
+            while (playersMove <= 0 || playersMove > 9)
             {
                 Console.WriteLine("Please enter a valid number");
                 playersMove = Convert.ToByte(Console.ReadLine());
