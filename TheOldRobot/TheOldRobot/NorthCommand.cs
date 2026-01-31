@@ -4,9 +4,9 @@ using System.Text;
 
 namespace TheOldRobot
 {
-    internal class NorthCommand : RobotCommand
+    internal class NorthCommand : IRobotCommand
     {
-        public override void Run(Robot robot)
+        public void Run(Robot robot)
         {
             if (robot.IsPowered)
             {

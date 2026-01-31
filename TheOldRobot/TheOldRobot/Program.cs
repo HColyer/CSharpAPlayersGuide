@@ -104,10 +104,10 @@ namespace TheOldRobot
             }
 
             // Convert a Command enum value into a concrete RobotCommand object
-            static RobotCommand GetRobotCommand(Command command)
+            static IRobotCommand GetRobotCommand(Command command)
             {
                 // Switch expression maps each Command to its corresponding RobotCommand subclass
-                RobotCommand robotCommand = command switch
+                IRobotCommand robotCommand = command switch
                 {
                     Command.On => new OnCommand(),       // Turns the robot on
                     Command.Off => new OffCommand(),     // Turns the robot off
